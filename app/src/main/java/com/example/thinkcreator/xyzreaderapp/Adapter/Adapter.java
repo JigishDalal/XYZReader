@@ -48,23 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_article, parent, false);
         final ViewHolder vh = new ViewHolder(view);
-       /* view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View views) {
-                Bundle bundle = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    bundle = ActivityOptionsCompat.
-                            makeSceneTransitionAnimation((Activity) mcontext, vh.thumbnailView, vh.thumbnailView.getTransitionName()).toBundle();
-                    parent.getContext().startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), bundle);
-                } else {
-                    parent.getContext().startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
-                }
-
-            }
-        });
-        return vh;*/
+      
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,17 +84,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 ImageLoaderHelper.getInstance(mcontext).getImageLoader());
         holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
 
-        //onclick item
-/*        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mcontext, "heloo world", Toast.LENGTH_SHORT).show();
-
-               /* Bundle bundle=null;
-                bundle=ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)mcontext,holder.thumbnailView,holder.thumbnailView.getTransitionName()).toBundle();
-                mcontext.startActivity(new Intent(Intent.ACTION_VIEW,ItemsContract.Items.buildItemUri(getItemId(holder.getAdapterPosition()))),bundle);
-                   }
-            });*/
 
     }
 
